@@ -1,0 +1,15 @@
+{
+  "name": "vuepress-sidebar-atuo",
+  "version": "1.0.1",
+  "description": "Side bar automatically introduced",
+  "main": "index.js",
+  "dependencies": {
+    "nrm": "^1.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "malunan",
+  "license": "ISC"
+}

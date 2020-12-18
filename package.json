@@ -1,6 +1,6 @@
 {
   "name": "vuepress-sidebar-atuo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Side bar automatically introduced",
   "main": "index.js",
   "dependencies": {

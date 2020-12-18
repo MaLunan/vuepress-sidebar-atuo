@@ -2,7 +2,7 @@
 // const autosidebar = require('vuepress-auto-sidebar-doumjun')
 const fs = require('fs')
 const path = require('path')
-function getChildren(path) {
+function getChildren(path,sort=true) {
 let root = []
 readDirSync(path,root)
 root=root.map(item=>{
@@ -11,8 +11,25 @@ root=root.map(item=>{
     }else{
         return item.split('/')[3]
     }
+    
 })
-return root
+//排序
+if(sort){
+let sortList=[]
+let nosortList=[]
+root.forEach(item=>{
+	if(Number(item.replace(".md","").match(/[^-]*$/))){
+    	sortList.push(item)
+    }else{
+    	nosortList.push(item)
+    }
+})
+    root=sortList.sort(function(a,b){
+        return a.replace(".md","").match(/[^-]*$/)-b.replace(".md","").match(/[^-]*$/)
+    }).concat(nosortList)
+}
+
+    return root
 }
 function readDirSync(path,root){
 var pa = fs.readdirSync(path);
